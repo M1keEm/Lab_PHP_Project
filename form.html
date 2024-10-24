@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Formularz zamówienia</h1>
+<form action="/get.php" method="get">
+    <label for="surname">Nazwisko:</label>
+    <input type="text" name="surname" id="surname"><br>
+    <label for="name">Imię:</label>
+    <input type="text" name="name" id="name"><br>
+    <label for="age">Wiek:</label>
+    <input type="text" name="age" id="age"><br>
+    <label for="country">Kraj:</label>
+    <select name="country" id="country">
+        <option value="pl">Polska</option>
+        <option value="de">Niemcy</option>
+        <option value="fr">Francja</option>
+    </select><br>
+    <label for="email">Adres email:</label>
+    <input type="email" name="email" id="email"><br>
+    <h2>Zamawiam tutorial z języka:</h2>
+    <input type="checkbox" id="php" name="php" value="php">
+    <label for="php"> PHP</label>
+    <input type="checkbox" id="c/cpp" name="c/cpp" value="c/cpp">
+    <label for="c/cpp"> C/C++</label>
+    <input type="checkbox" id="java" name="java" value="java">
+    <label for="java">Java</label><br>
+    <h2>Sposób zapłaty:</h2>
+    <input type="radio" id="eurocard" name="payment" value="card">
+    <label for="eurocard">eurocard</label>
+    <input type="radio" id="visa" name="payment" value="visa">
+    <label for="visa">visa</label>
+    <input type="radio" id="transfer" name="payment" value="transfer">
+    <label for="transfer">przelew bankowy</label><br>
+    <input type="submit" value="Wyślij">
+    <input type="reset" value="Anuluj">
+
+</form>
+
+</body>
+</html>
