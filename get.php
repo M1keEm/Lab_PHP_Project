@@ -33,7 +33,17 @@
         echo "Email: $email <br />";
     } else echo "Nie wpisano emaila <br />";
 
+    echo "Wybrane tutoriale: ";
+    if (isset($_REQUEST['php'])) print("PHP ");
+    if (isset($_REQUEST['c/cpp'])) print("C/C++ ");
+    if (isset($_REQUEST['java'])) print("Java");
+    echo "<br>";
+    echo "<br>Sposób zapłaty: ";
 
-
+    if (isset($_REQUEST['payment'])) {
+        $payment = $_REQUEST['payment'];
+        echo $payment . "<br>";
+    }
+    echo "<p><a href = 'form.html'>" . "Powrót do formularza" . "</a>"
     ?>
 </div>
