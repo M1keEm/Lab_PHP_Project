@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -10,10 +9,10 @@
 <?php
 if (isset($_REQUEST['jezyki'])) {
     echo "Wybrane tutoriale foreach:";
-    foreach($_REQUEST['jezyki'] as $jezyk) {
-        echo " ".$jezyk," ";
+    foreach ($_REQUEST['jezyki'] as $jezyk) {
+        echo " " . $jezyk, " ";
     }
-    echo "<br>wybrane tutoriale join: ". join(", ", $_REQUEST['jezyki']);
+    echo "<br>wybrane tutoriale join: " . join(", ", $_REQUEST['jezyki']);
 } else {
     echo "<p>Nie wybrano żadnych tutoriali.</p>";
 }
