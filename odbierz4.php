@@ -20,15 +20,15 @@ if (isset($_REQUEST['payment'])) {
     $payment = $_REQUEST['payment'];
     echo $payment . "<br>";
 }
-$nazw = $_POST['surname'];
+$surname = $_POST['surname'];
 $age = $_POST['age'];
 $email = $_POST['email'];
 $country = $_POST['country'];
-if ($nazw && $age && $email && $country) {
-    print("<p><a href = 'http://localhost:63342/lab2/klient.php?nazwisko=$nazw&wiek=$age&email=$email&panstwo=$country'>");
+if ($surname && $age && $email && $country) {
+    print("<p><a href = 'http://localhost:63342/lab2/klient.php?nazwisko=$surname&wiek=$age&email=$email&panstwo=$country'>");
     print("informaje konktaktowe</a>");
 } else echo "dane zamawiającego nie są kompletne";
-echo "<p><a href = 'http://localhost:63342/lab2/formularz.php'>" . "Powrót do formularzu" . "</a>"
+echo "<p><a href = 'http://localhost:63342/lab2/formularz.php'>" . "Powrót do formularza" . "</a>"
 ?>
 
 </body>

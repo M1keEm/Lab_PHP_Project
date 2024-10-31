@@ -12,7 +12,7 @@ if (isset($_REQUEST['jezyki'])) {
     foreach ($_REQUEST['jezyki'] as $jezyk) {
         echo " " . $jezyk, " ";
     }
-    echo "<br>wybrane tutoriale join: " . join(", ", $_REQUEST['jezyki']);
+    echo "<br>Wybrane tutoriale join: " . join(", ", $_REQUEST['jezyki']);
 } else {
     echo "<p>Nie wybrano żadnych tutoriali.</p>";
 }
