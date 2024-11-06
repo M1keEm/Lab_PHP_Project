@@ -28,7 +28,7 @@ if ($surname && $age && $email && $country) {
     print("<p><a href = 'http://localhost:63342/Lab_PHP_Project/klient.php?nazwisko=$surname&wiek=$age&email=$email&panstwo=$country'>");
     print("informaje konktaktowe</a>");
 } else echo "dane zamawiającego nie są kompletne";
-echo "<p><a href = 'http://localhost:63342/Lab_PHP_Project/formularz.php'>" . "Powrót do formularza" . "</a>"
+echo "<p><a href = 'http://localhost:63342/Lab_PHP_Project/pliki.php'>" . "Powrót do formularza" . "</a>"
 ?>
 
 </body>
