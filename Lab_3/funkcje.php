@@ -23,16 +23,16 @@ function dodaj()
         $dane .= " " . $_REQUEST['payment'] . " ";
     }
     $dane .= "\n";
-    $file = fopen("dane.txt","a");
-    fwrite($file,$dane);
+    $file = fopen("dane.txt", "a");
+    fwrite($file, $dane);
     fclose($file);
 }
 
 function pokaz()
 {
-    $wp = fopen("dane.txt","r");
+    $wp = fopen("dane.txt", "r");
     $tablica = file("dane.txt");
-    for($i = 0; $i < count($tablica); $i++){
+    for ($i = 0; $i < count($tablica); $i++) {
         echo $tablica[$i] . "<br>";
     }
     fclose($wp);
@@ -41,6 +41,14 @@ function pokaz()
 
 function pokaz_zamowienie($tut)
 {
+    $wp = fopen("dane.txt", "r");
+    $tablica = file("dane.txt");
+    for ($i = 0; $i < count($tablica); $i++) {
+        if (str_contains($tablica[$i], $tut)) {
+            echo $tablica[$i] . "<br>";
+        }
+    }
+    fclose($wp);
 //odczytaj dane z pliku i wyświetl tylko te wiersze,
 //w których zamówiono tutorial $tut (np. $tut="Java")
 }
