@@ -37,7 +37,7 @@
     <input type="radio" name="payment" value="przelew bankowy"> Przelew bankowy<br><br>
 
     <input type="submit" name="submit" value="Wyślij">
-    <input type="reset" name="submit" value="Anuluj">
+    <input type="submit" name="submit" value="Zapisz">
     <input type="submit" name="submit" value="Pokaż">
     <input type="submit" name="submit" value="PHP">
     <input type="submit" name="submit" value="CPP">
