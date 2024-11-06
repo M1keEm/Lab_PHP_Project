@@ -29,6 +29,8 @@
     foreach ($jezyki as $jezyk) {
         echo "<input type='checkbox' name='jezyki[]' value='$jezyk'> $jezyk";
     }
+
+
     ?>
 
     <p>Sposób zapłaty:</p>
