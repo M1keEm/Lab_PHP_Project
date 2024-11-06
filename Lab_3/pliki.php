@@ -25,9 +25,13 @@
 
     <p>Zamawiam tutorial z języka:</p>
     <?php
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+
     $jezyki = ["C", "CPP", "Java", "C#", "HTML", "CSS", "XML", "PHP", "JavaScript"];
     foreach ($jezyki as $jezyk) {
-        echo "<input type='checkbox' name='jezykiuuuiii' value='$jezyk'> $jezyk";
+        echo "<input type='checkbox' name='jezyki[]' value='$jezyk'> $jezyk";
     }
     ?>
 

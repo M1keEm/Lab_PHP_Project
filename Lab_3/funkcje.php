@@ -20,7 +20,7 @@ function dodaj()
         $dane .= " " . "nie wybrano żadnego tutoriala ";
     }
     if (isset($_REQUEST['payment'])) {
-        $dane .= $_REQUEST['payment'] . " ";
+        $dane .= " " . $_REQUEST['payment'] . " ";
     }
     $dane .= "\n";
     $file = fopen("dane.txt","a");
@@ -30,6 +30,12 @@ function dodaj()
 
 function pokaz()
 {
+    $wp = fopen("dane.txt","r");
+    $tablica = file("dane.txt");
+    for($i = 0; $i < count($tablica); $i++){
+        echo $tablica[$i] . "<br>";
+    }
+    fclose($wp);
 //odczytaj wszystkie dane z pliku i wyświetl wierszami...
 }
 
