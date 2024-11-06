@@ -2,9 +2,30 @@
 function dodaj()
 {
     $dane = "";
-    if (isset($_REQUEST["nazwisko"])) {
-        $dane .= htmlspecialchars($_REQUEST['nazw']) . " ";
+    if (isset($_REQUEST["surname"])) {
+        $dane .= htmlspecialchars($_REQUEST['surname']) . " ";
     }
+    if (isset($_REQUEST["age"])) {
+        $dane .= htmlspecialchars($_REQUEST['age']) . " ";
+    }
+    if (isset($_REQUEST["country"])) {
+        $dane .= htmlspecialchars($_REQUEST['country']) . " ";
+    }
+    if (isset($_REQUEST["email"])) {
+        $dane .= htmlspecialchars($_REQUEST['email']) . " ";
+    }
+    if (isset($_REQUEST['jezyki'])) {
+        $dane .= " " . join(", ", $_REQUEST['jezyki']);
+    } else {
+        $dane .= " " . "nie wybrano żadnego tutoriala ";
+    }
+    if (isset($_REQUEST['payment'])) {
+        $dane .= $_REQUEST['payment'] . " ";
+    }
+    $dane .= "\n";
+    $file = fopen("dane.txt","a");
+    fwrite($file,$dane);
+    fclose($file);
 }
 
 function pokaz()
@@ -22,10 +43,10 @@ function pokaz_zamowienie($tut)
 if (isset($_REQUEST["submit"])) { //jeśli kliknięto przycisk o name=submit
     $akcja = $_REQUEST["submit"]; //odczytaj jego value
     switch ($akcja) {
-        case "Zapisz":
+        case "Save":
             dodaj();
             break;
-        case "Pokaż":
+        case "Show":
             pokaz();
             break;
         case "Java":

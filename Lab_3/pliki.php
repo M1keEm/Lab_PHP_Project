@@ -27,7 +27,7 @@
     <?php
     $jezyki = ["C", "CPP", "Java", "C#", "HTML", "CSS", "XML", "PHP", "JavaScript"];
     foreach ($jezyki as $jezyk) {
-        echo "<input type='checkbox' name='jezyki[]' value='$jezyk'> $jezyk";
+        echo "<input type='checkbox' name='jezykiuuuiii' value='$jezyk'> $jezyk";
     }
     ?>
 
