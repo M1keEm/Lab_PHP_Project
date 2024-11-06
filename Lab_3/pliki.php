@@ -40,7 +40,7 @@
     <input type="radio" name="payment" value="visa"> Visa<br>
     <input type="radio" name="payment" value="przelew bankowy"> Przelew bankowy<br><br>
 
-    <input type="submit" name="submit" value="Clear">
+    <input type="reset" name="submit" value="Clear">
     <input type="submit" name="submit" value="Save">
     <input type="submit" name="submit" value="Show">
     <input type="submit" name="submit" value="PHP">
