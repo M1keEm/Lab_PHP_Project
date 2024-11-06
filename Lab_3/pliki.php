@@ -30,8 +30,6 @@
     foreach ($jezyki as $jezyk) {
         echo "<input type='checkbox' name='jezyki[]' value='$jezyk'> $jezyk";
     }
-
-
     ?>
 
     <p>Sposób zapłaty:</p>
@@ -39,12 +37,15 @@
     <input type="radio" name="payment" value="visa"> Visa<br>
     <input type="radio" name="payment" value="przelew bankowy"> Przelew bankowy<br><br>
 
-    <input type="submit" name="submit" value="Wyślij">
-    <input type="submit" name="submit" value="Zapisz">
-    <input type="submit" name="submit" value="Pokaż">
+    <input type="submit" name="submit" value="Clear">
+    <input type="submit" name="submit" value="Save">
+    <input type="submit" name="submit" value="Show">
     <input type="submit" name="submit" value="PHP">
     <input type="submit" name="submit" value="CPP">
     <input type="submit" name="submit" value="Java">
+    <?php
+    include_once "funkcje.php";
+    ?>
 </form>
 </body>
 </html>

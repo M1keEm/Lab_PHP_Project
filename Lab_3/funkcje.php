@@ -2,7 +2,7 @@
 function dodaj()
 {
     $dane = "";
-    if (isset($_REQUEST["nazw"])) {
+    if (isset($_REQUEST["nazwisko"])) {
         $dane .= htmlspecialchars($_REQUEST['nazw']) . " ";
     }
 }
@@ -37,7 +37,6 @@ if (isset($_REQUEST["submit"])) { //jeśli kliknięto przycisk o name=submit
         case "PHP":
             pokaz_zamowienie("PHP");
             break;
-        //pozostałe przypadki
     }
 }
 
