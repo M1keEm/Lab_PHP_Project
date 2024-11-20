@@ -1,5 +1,5 @@
 <?php
-// Tablica technologii
+// Tablica technologii ze skryptu do zadania 4.3.
 $tech = ["C", "CPP", "Java", "C#", "Html", "CSS", "XML", "PHP", "JavaScript"];
 $fileName = "ankieta.txt";
 
@@ -17,12 +17,12 @@ function getVotes($fileName): array
 {
     $votes = [];
     $file = fopen($fileName, "r");
-    while (($line = fgets($file)) !== false) {
-        list($language, $count) = explode(":", trim($line));
-        $votes[$language] = (int)$count;
+    while (($line = fgets($file)) !== false) { // Odczytaj plik wiersz po wierszu, jeśli wystąpi błąd przerwij
+        list($language, $count) = explode(":", trim($line)); // podziel wiersz na język i liczbę głosów, usuwając białe znaki
+        $votes[$language] = (int)$count; // zapisz liczbę głosów jako liczbę całkowitą
     }
     fclose($file);
-    return $votes;
+    return $votes; // zwróć tablicę z wynikami
 }
 
 // Funkcja zapisywania danych do pliku
