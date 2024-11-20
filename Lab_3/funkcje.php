@@ -72,6 +72,41 @@ if (isset($_REQUEST["submit"])) { //jeśli kliknięto przycisk o name=submit
         case "PHP":
             pokaz_zamowienie("PHP");
             break;
+        case "Statystyki":
+            statystyki();
+            break;
     }
 }
 
+function statystyki()
+{
+    $fileName = "dane.txt";
+    if (!file_exists($fileName)) {
+        echo "Brak danych w pliku.";
+        return;
+    }
+
+    $totalOrders = 0;
+    $under18 = 0;
+    $above49 = 0;
+
+    $file = fopen($fileName, "r");
+    while (($line = fgets($file)) !== false) {
+        $totalOrders++;
+        $fields = explode(" ", trim($line));
+        if (isset($fields[1])) { // Wiek znajduje się w 2. polu wiersza
+            $age = (int)$fields[1];
+            if ($age < 18) {
+                $under18++;
+            }
+            if ($age >= 50) {
+                $above49++;
+            }
+        }
+    }
+    fclose($file);
+
+    echo "<p>Liczba wszystkich zamówień: $totalOrders</p>";
+    echo "<p>Liczba zamówień od osób w wieku < 18 lat: $under18</p>";
+    echo "<p>Liczba zamówień od osób w wieku >= 50 lat: $above49</p>";
+}
