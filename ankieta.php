@@ -37,15 +37,15 @@ function saveVotes($fileName, $votes): void
 
 // Przetwarzanie formularza
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $votes = getVotes($fileName);
+    $votes = getVotes($fileName); // Odczytaj głosy z pliku
     foreach ($tech as $t) {
-        if (isset($_POST[$t])) {
-            $votes[$t]++;
+        if (isset($_POST[$t])) { // Jeśli technologia została zaznaczona
+            $votes[$t]++; // Zwiększ liczbę głosów
         }
     }
-    saveVotes($fileName, $votes);
-    header("Location: ankieta.php");
-    exit();
+    saveVotes($fileName, $votes); // Nadpisz głosy w pliku
+    header("Location: ankieta.php"); // Przekieruj na stronę ankiety, aby uniknąć ponownego przesłania formularza
+    exit(); // Unikamy niechcianych efektów dalszego wykonywania skryptu
 }
 
 // Wyświetlanie wyników
