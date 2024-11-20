@@ -46,6 +46,7 @@
     <input type="submit" name="submit" value="PHP">
     <input type="submit" name="submit" value="CPP">
     <input type="submit" name="submit" value="Java">
+    <input type="submit" name="submit" value="Statystyki">
     <br>
     <?php
     include_once "funkcje.php";
