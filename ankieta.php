@@ -59,11 +59,11 @@ $votes = getVotes($fileName);
     <title>Ankieta</title>
 </head>
 <body>
-<h1>Wybierz technologie, które znasz:</h1>
+<h2>Wybierz technologie, które znasz:</h2>
 <form method="post">
     <?php foreach ($tech as $t): ?>
         <label>
-            <input type="checkbox" name="<?= $t ?>"> <?= $t ?>
+            <input type="checkbox" name="<?= $t ?>"> <?= $t ?> <!-- ?= zmienna ? jest równoznaczne z <php echo zmienna -->
         </label><br>
     <?php endforeach; ?>
     <button type="submit">Wyślij</button>
