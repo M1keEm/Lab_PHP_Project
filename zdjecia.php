@@ -1,22 +1,22 @@
 <?php
 
-if(isset($_POST['zapisz']) && $_POST['zapisz']=='Zapisz' && !isset($_GET['pic'])){
-    if(is_uploaded_file($_FILES['zdjecie']['tmp_name'])){
+if (isset($_POST['zapisz']) && $_POST['zapisz'] == 'Zapisz' && !isset($_GET['pic'])) {
+    if (is_uploaded_file($_FILES['zdjecie']['tmp_name'])) {
         $typ = $_FILES['zdjecie']['type'];
-        if($typ=="image/jpeg"){
-            mkdir("./Miniatury",777,true);
-            mkdir("./Zdjecia",777,true);
-            move_uploaded_file($_FILES['zdjecie']['tmp_name'],"./Zdjecia/".$_FILES['zdjecie']['name']);
+        if ($typ == "image/jpeg") {
+            mkdir("./Miniatury", 777, true);
+            mkdir("./Zdjecia", 777, true);
+            move_uploaded_file($_FILES['zdjecie']['tmp_name'], "./Zdjecia/" . $_FILES['zdjecie']['name']);
             $link = $_FILES['zdjecie']['name'];
             $random = uniqid('IMG_'); //wygenerowanie losowej wartości
-            $zdj = "./Zdjecia/".$random . '.jpg';
-            copy( './Zdjecia/' .$link, $zdj); //utworzenie kopii zdjęcia
+            $zdj = "./Zdjecia/" . $random . '.jpg';
+            copy('./Zdjecia/' . $link, $zdj); //utworzenie kopii zdjęcia
 
             $dlugosc = strlen($link);
             $dlugosc -= 4;
             $link = substr($link, 0, $dlugosc);
             echo "link=$link <br/>";
-            header('location:zdjecia.php?pic='.$link);
+            header('location:zdjecia.php?pic=' . $link);
 
             list($width, $height) = getimagesize($zdj); //pobranie rozmiarów obrazu
             $wys = $_POST['wys']; //wysokość preferowana przez użytkownika
@@ -45,8 +45,7 @@ if(isset($_POST['zapisz']) && $_POST['zapisz']=='Zapisz' && !isset($_GET['pic'])
             unlink($zdj);
 
 
-        }
-        else {
+        } else {
             header('location:zdjecia.html');
         }
     }
@@ -63,8 +62,6 @@ if (is_dir($sciezkaMiniatury)) {
     }
 }
 echo '<br/><a href="zdjecia.html">Powrot do formularza</a>';
-
-
 
 
 ?>
